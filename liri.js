@@ -6,6 +6,7 @@ var fs = require("fs");
 var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
+var axios = require("axios");
 //variables to display user inputs.
 var userOption = process.argv[2];
 var inputParameter = process.argv[3];
@@ -97,7 +98,7 @@ function showMovieInfo(inputParameter) {
     "http://www.omdbapi.com/?t=" +
     inputParameter +
     "&y=&plot=short&apikey=b31c3ab9";
-  request(queryUrl, function(error, response, body) {
+  axios.get(queryUrl, function(error, response, body) {
     // If the request is successful
     if (!error && response.statusCode === 200) {
       var movies = JSON.parse(body);
