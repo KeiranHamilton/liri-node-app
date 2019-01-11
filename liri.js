@@ -49,26 +49,26 @@ function showSongInfo(inputParameter) {
         console.log("Error occurred: " + err);
         return;
       }
-      var songs = data.tracks.items;
+      var theSongs = data.tracks.items;
 
-      for (var i = 0; i < songs.length; i++) {
+      for (var i = 0; i < theSongs.length; i++) {
         console.log("**********SONG INFO*********");
         fs.appendFileSync("log.txt", "**********SONG INFO*********\n");
         console.log(i);
         fs.appendFileSync("log.txt", i + "\n");
-        console.log("Song name: " + songs[i].name);
-        fs.appendFileSync("log.txt", "song name: " + songs[i].name + "\n");
-        console.log("Preview song: " + songs[i].preview_url);
+        console.log("Song name: " + theSongs[i].name);
+        fs.appendFileSync("log.txt", "song name: " + theSongs[i].name + "\n");
+        console.log("Preview song: " + theSongs[i].preview_url);
         fs.appendFileSync(
           "log.txt",
-          "preview song: " + songs[i].preview_url + "\n"
+          "preview song: " + theSongs[i].preview_url + "\n"
         );
-        console.log("Album: " + songs[i].album.name);
-        fs.appendFileSync("log.txt", "album: " + songs[i].album.name + "\n");
-        console.log("Artist(s): " + songs[i].artists[0].name);
+        console.log("Album: " + theSongs[i].album.name);
+        fs.appendFileSync("log.txt", "album: " + theSongs[i].album.name + "\n");
+        console.log("Artist(s): " + theSongs[i].artists[0].name);
         fs.appendFileSync(
           "log.txt",
-          "artist(s): " + songs[i].artists[0].name + "\n"
+          "artist(s): " + theSongs[i].artists[0].name + "\n"
         );
         console.log("*****************************");
         fs.appendFileSync("log.txt", "*****************************\n");
@@ -136,7 +136,7 @@ function showMovieInfo(inputParameter) {
   });
 }
 
-//function to get proper Rotten Tomatoes Rating
+//function for Rotten Tomatoes Rating
 function getRottenTomatoesRatingObject(data) {
   return data.Ratings.find(function(item) {
     return item.Source === "Rotten Tomatoes";
@@ -145,15 +145,4 @@ function getRottenTomatoesRatingObject(data) {
 
 function getRottenTomatoesRatingValue(data) {
   return getRottenTomatoesRatingObject(data).Value;
-}
-
-//function for reading out of random.txt file
-function showSomeInfo() {
-  fs.readFile("random.txt", "utf8", function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
-    var dataArr = data.split(",");
-    UserInputs(dataArr[0], dataArr[1]);
-  });
 }
