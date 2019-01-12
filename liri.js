@@ -97,8 +97,8 @@ function showMovieInfo(inputParameter) {
   var queryUrl =
     "http://www.omdbapi.com/?t=" +
     inputParameter +
-    "&y=&plot=short&apikey=b31c3ab9";
-  axios.get(queryUrl, function(error, response, body) {
+    "&y=&plot=short&apikey=b3c0b435";
+  request(queryUrl, function(error, response, body) {
     // If the request is successful
     if (!error && response.statusCode === 200) {
       var movies = JSON.parse(body);
@@ -136,7 +136,7 @@ function showMovieInfo(inputParameter) {
   });
 }
 
-//function for Rotten Tomatoes Rating
+//function to get proper Rotten Tomatoes Rating
 function getRottenTomatoesRatingObject(data) {
   return data.Ratings.find(function(item) {
     return item.Source === "Rotten Tomatoes";
@@ -145,4 +145,15 @@ function getRottenTomatoesRatingObject(data) {
 
 function getRottenTomatoesRatingValue(data) {
   return getRottenTomatoesRatingObject(data).Value;
+}
+
+//function for reading out of random.txt file
+function showSomeInfo() {
+  fs.readFile("random.txt", "utf8", function(err, data) {
+    if (err) {
+      return console.log(err);
+    }
+    var dataArr = data.split(",");
+    UserInputs(dataArr[0], dataArr[1]);
+  });
 }

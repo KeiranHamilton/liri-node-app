@@ -1,6 +1,6 @@
 # Liri Node App
 
-Developer: Keiran Hamilton 
+Developer: Keiran Hamilton
 
 ## ABOUT THE APP
 
@@ -11,26 +11,22 @@ that takes in different parameters and gives back information.
 
 Go to you command Terminal and type in "node liri.js" followed by one of these commands to get back data.
 
-* concert-this
+- spotify-this-song
 
-* spotify-this-song
+- movie-this
 
-* movie-this
+- do-what-it-says
 
-* do-what-it-says
-
- *example (node liri.js spotify-this-song <name of song>)*
-
+  _example (node liri.js spotify-this-song <name of song>)_
 
 ## TECHNOLOGIES/TOOLS USED IN THIS APP
 
 Nodejs
 
-Axios, 
+Axios,
 
-FS, 
+FS,
 
-Json, 
+Json,
 
-.Env 
-
+.Env
