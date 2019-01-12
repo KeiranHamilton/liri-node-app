@@ -1,11 +1,6 @@
 # Liri Node App
 
-<<<<<<< HEAD
-Developer: Keiran Hamilton
-=======
-Developer: Keiran Hamilton 
-[Video link](https://www.youtube.com/watch?v=kKjF8CfOLXQ)
->>>>>>> 2df6fcd865c7830fea91bf0d7c9089d94750ac3b
+[Video Link](https://www.youtube.com/watch?v=kKjF8CfOLXQ)
 
 ## ABOUT THE APP
 
